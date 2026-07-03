@@ -2,7 +2,7 @@
 
 A local AI agent that takes a natural-language business request, searches a
 synthetic Suproc-style dataset, ranks and verifies its recommendations, and
-prepares (but never sends) a next action — waiting for human approval.
+prepares next action waiting for human approval.
 
 Built for the Suproc AI Engineering final-round assignment.
 
