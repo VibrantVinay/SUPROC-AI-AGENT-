@@ -1,0 +1,73 @@
+[notice] Local Ollama model not reachable -- using deterministic rule-based requirement parsing and templated drafting instead. Run `ollama serve` with the model pulled (see README) for full LLM-assisted understanding.
+
+========================================================================
+1. Interpreted Business Requirement
+========================================================================
+Objective       : We need 5 suppliers from Karnataka providing food-grade biodegradable containers, minimum order of 999999999 units, deliver within 1 days
+Entity type     : supplier
+Parsed by       : rule_based_fallback
+Requested count : 5
+
+========================================================================
+2. Hard Constraints
+========================================================================
+{
+  "locations": [
+    "Karnataka"
+  ],
+  "certifications": [
+    "food-grade"
+  ],
+  "minimum_capacity": 999999999,
+  "maximum_delivery_days": 1,
+  "entity_type": "supplier"
+}
+
+========================================================================
+3. Preferences
+========================================================================
+{
+  "sustainable_materials": true,
+  "startup_friendly": null,
+  "other": []
+}
+
+========================================================================
+4. Execution Plan
+========================================================================
+  1. Search suppliers by category/skill keywords and requested location
+  2. Inspect candidate suppliers for certifications, capacity and availability
+  3. Filter out records that fail any hard requirement
+  4. Score and rank the remaining candidates using weighted, evidence-backed criteria
+  5. Validate every recommendation against the dataset (existence, constraints, duplicates, entity type)
+  6. Attempt correction (search again / re-filter) if validation fails, up to 3 times
+  7. Prepare the final structured response, including a draft outreach message awaiting approval
+
+========================================================================
+5. Recommended Matches
+========================================================================
+  No valid matches found. See 'Recommended Next Action' below.
+
+========================================================================
+6. Missing Information
+========================================================================
+  None noted.
+
+========================================================================
+7. Risks / Uncertainties
+========================================================================
+  None noted.
+
+========================================================================
+8. Validation Status
+========================================================================
+  failed_no_valid_matches  (correction attempts used: 1)
+  note: Correction attempt 1: no further correctable issues found; 0 valid match(es) available.
+
+========================================================================
+9. Recommended Next Action
+========================================================================
+  No valid matches were found that satisfy the hard constraints. Recommend broadening the search criteria (e.g. location or certification) or posting an open opportunity/bounty instead.
+  Human approval required: True
+  STATUS: Awaiting user approval. No message has been sent and no record has been changed.
+

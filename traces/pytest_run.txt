@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/suproc-agent
+configfile: pytest.ini
+plugins: anyio-4.14.1
+collecting ... collected 23 items
+
+tests/test_agent.py::test_normal_request_returns_valid_matches PASSED    [  4%]
+tests/test_agent.py::test_impossible_constraints_yield_no_matches_not_invented_ones PASSED [  8%]
+tests/test_agent.py::test_conflicting_entity_type_mentions_are_flagged_as_ambiguous PASSED [ 13%]
+tests/test_agent.py::test_missing_location_in_request_is_reported PASSED [ 17%]
+tests/test_agent.py::test_dataset_record_with_missing_fields_is_handled_gracefully PASSED [ 21%]
+tests/test_agent.py::test_vague_category_still_returns_only_certified_candidates_when_constraint_present PASSED [ 26%]
+tests/test_agent.py::test_duplicate_listings_never_both_appear_in_final_output PASSED [ 30%]
+tests/test_agent.py::test_unknown_entity_id_returns_none PASSED          [ 34%]
+tests/test_agent.py::test_unavailable_professional_is_surfaced_with_low_availability_score PASSED [ 39%]
+tests/test_agent.py::test_correction_loop_excludes_disqualified_candidate_and_retries PASSED [ 43%]
+tests/test_agent.py::test_prompt_injection_in_dataset_record_never_bypasses_approval PASSED [ 47%]
+tests/test_agent.py::test_human_approval_always_required_even_if_asked_to_skip_it PASSED [ 52%]
+tests/test_agent.py::test_validation_still_runs_even_if_asked_to_ignore_it PASSED [ 56%]
+tests/test_tools.py::test_search_entities_finds_known_supplier PASSED    [ 60%]
+tests/test_tools.py::test_get_entity_details_returns_none_for_unknown_id PASSED [ 65%]
+tests/test_tools.py::test_get_entity_details_returns_record_for_known_id PASSED [ 69%]
+tests/test_tools.py::test_filter_by_constraints_drops_non_matching_location PASSED [ 73%]
+tests/test_tools.py::test_filter_by_constraints_enforces_certification PASSED [ 78%]
+tests/test_tools.py::test_calculate_match_score_is_reproducible PASSED   [ 82%]
+tests/test_tools.py::test_validate_recommendations_rejects_unknown_entity PASSED [ 86%]
+tests/test_tools.py::test_validate_recommendations_flags_missing_certification_even_if_marketing_claims_it PASSED [ 91%]
+tests/test_tools.py::test_validate_recommendations_detects_duplicate_listing PASSED [ 95%]
+tests/test_tools.py::test_validate_recommendations_flags_prompt_injection_text_without_acting_on_it PASSED [100%]
+
+============================== 23 passed in 0.19s ==============================

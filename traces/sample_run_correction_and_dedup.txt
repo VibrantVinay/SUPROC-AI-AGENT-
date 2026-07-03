@@ -1,0 +1,179 @@
+[notice] Local Ollama model not reachable -- using deterministic rule-based requirement parsing and templated drafting instead. Run `ollama serve` with the model pulled (see README) for full LLM-assisted understanding.
+
+========================================================================
+1. Interpreted Business Requirement
+========================================================================
+Objective       : We need suppliers from Karnataka providing food-grade biodegradable containers, minimum order 5,000 units, deliver within 60 days
+Entity type     : supplier
+Parsed by       : rule_based_fallback
+Requested count : 10
+
+========================================================================
+2. Hard Constraints
+========================================================================
+{
+  "locations": [
+    "Karnataka"
+  ],
+  "certifications": [
+    "food-grade"
+  ],
+  "minimum_capacity": 5000,
+  "maximum_delivery_days": 60,
+  "entity_type": "supplier"
+}
+
+========================================================================
+3. Preferences
+========================================================================
+{
+  "sustainable_materials": true,
+  "startup_friendly": null,
+  "other": []
+}
+
+========================================================================
+4. Execution Plan
+========================================================================
+  1. Search suppliers by category/skill keywords and requested location
+  2. Inspect candidate suppliers for certifications, capacity and availability
+  3. Filter out records that fail any hard requirement
+  4. Score and rank the remaining candidates using weighted, evidence-backed criteria
+  5. Validate every recommendation against the dataset (existence, constraints, duplicates, entity type)
+  6. Attempt correction (search again / re-filter) if validation fails, up to 3 times
+  7. Prepare the final structured response, including a draft outreach message awaiting approval
+
+========================================================================
+5. Recommended Matches
+========================================================================
+
+  [SUP-010] Bengaluru Bagasse Works  (score: 0.964)
+    Score breakdown: relevance=0.9 location=1.0 constraints=1.0 availability=1.0 reputation=0.94
+    Evidence:
+      - Matches objective keywords via tags: ['biodegradable packaging', 'food-grade containers']
+      - Category 'biodegradable food containers' matches objective
+      - Located in Bengaluru, Karnataka which matches requested location(s)
+      - entity_type: satisfied
+      - location: satisfied
+      - certifications: satisfied
+      - minimum_capacity: satisfied
+      - maximum_delivery_days: satisfied
+      - Capacity 400000/month covers requested 5000 units
+      - Delivery time 12 days is within the 60-day requirement
+      - Rating 4.7/5 from 76 reviews
+
+  [SUP-001] GreenPack Naturals  (score: 0.962)
+    Score breakdown: relevance=0.9 location=1.0 constraints=1.0 availability=1.0 reputation=0.92
+    Evidence:
+      - Matches objective keywords via tags: ['biodegradable packaging', 'food-grade containers']
+      - Category 'biodegradable food containers' matches objective
+      - Located in Bengaluru, Karnataka which matches requested location(s)
+      - entity_type: satisfied
+      - location: satisfied
+      - certifications: satisfied
+      - minimum_capacity: satisfied
+      - maximum_delivery_days: satisfied
+      - Capacity 200000/month covers requested 5000 units
+      - Delivery time 18 days is within the 60-day requirement
+      - Rating 4.6/5 from 58 reviews
+
+  [SUP-016] Mangaluru EcoWare  (score: 0.96)
+    Score breakdown: relevance=0.9 location=1.0 constraints=1.0 availability=1.0 reputation=0.9
+    Evidence:
+      - Matches objective keywords via tags: ['biodegradable packaging', 'food-grade containers']
+      - Category 'biodegradable food containers' matches objective
+      - Located in Mangaluru, Karnataka which matches requested location(s)
+      - entity_type: satisfied
+      - location: satisfied
+      - certifications: satisfied
+      - minimum_capacity: satisfied
+      - maximum_delivery_days: satisfied
+      - Capacity 180000/month covers requested 5000 units
+      - Delivery time 16 days is within the 60-day requirement
+      - Rating 4.5/5 from 41 reviews
+
+  [SUP-018] Coorg Compost Craft  (score: 0.956)
+    Score breakdown: relevance=0.9 location=1.0 constraints=1.0 availability=1.0 reputation=0.86
+    Evidence:
+      - Matches objective keywords via tags: ['biodegradable packaging', 'food-grade containers']
+      - Category 'biodegradable food containers' matches objective
+      - Located in Kodagu, Karnataka which matches requested location(s)
+      - entity_type: satisfied
+      - location: satisfied
+      - certifications: satisfied
+      - minimum_capacity: satisfied
+      - maximum_delivery_days: satisfied
+      - Capacity 90000/month covers requested 5000 units
+      - Delivery time 17 days is within the 60-day requirement
+      - Rating 4.3/5 from 20 reviews
+
+  [SUP-006] Mysuru Green Wraps  (score: 0.94)
+    Score breakdown: relevance=0.9 location=1.0 constraints=1.0 availability=1.0 reputation=0.704
+    Evidence:
+      - Matches objective keywords via tags: ['biodegradable packaging', 'food-grade containers']
+      - Category 'biodegradable food containers' matches objective
+      - Located in Mysuru, Karnataka which matches requested location(s)
+      - entity_type: satisfied
+      - location: satisfied
+      - certifications: satisfied
+      - minimum_capacity: satisfied
+      - maximum_delivery_days: satisfied
+      - Capacity 60000/month covers requested 5000 units
+      - Delivery time 45 days is within the 60-day requirement
+      - Rating 4.0/5 from 12 reviews
+
+  [SUP-028] Belagavi BioBox  (score: 0.931)
+    Score breakdown: relevance=0.9 location=1.0 constraints=1.0 availability=1.0 reputation=0.612
+    Evidence:
+      - Matches objective keywords via tags: ['biodegradable packaging', 'food-grade containers']
+      - Category 'biodegradable food containers' matches objective
+      - Located in Belagavi, Karnataka which matches requested location(s)
+      - entity_type: satisfied
+      - location: satisfied
+      - certifications: satisfied
+      - minimum_capacity: satisfied
+      - maximum_delivery_days: satisfied
+      - Capacity 55000/month covers requested 5000 units
+      - Delivery time 27 days is within the 60-day requirement
+      - Rating 3.8/5 from 7 reviews
+
+========================================================================
+6. Missing Information
+========================================================================
+  None noted.
+
+========================================================================
+7. Risks / Uncertainties
+========================================================================
+  - SUP-006 (Mysuru Green Wraps) has a limited review history (12 reviews); confidence in reputation score is lower.
+  - SUP-006 (Mysuru Green Wraps) has a note flagging unconfirmed or pending information: "Small workshop. Delivery times can extend during monsoon season (unconfirmed by supplier)."
+  - SUP-028 (Belagavi BioBox) has a limited review history (7 reviews); confidence in reputation score is lower.
+
+========================================================================
+8. Validation Status
+========================================================================
+  passed_with_fewer_results (6 of 10 requested)  (correction attempts used: 2)
+  note: Correction attempt 1: excluded ['SUP-011'] due to validation failures and re-ranked remaining candidates.
+
+========================================================================
+9. Recommended Next Action
+========================================================================
+  Send a procurement enquiry to SUP-010, SUP-001, SUP-016, SUP-018, SUP-006, SUP-028.
+  Human approval required: True
+  STATUS: Awaiting user approval. No message has been sent and no record has been changed.
+
+========================================================================
+10. Draft Outreach Message (NOT sent)
+========================================================================
+Subject: Procurement enquiry -- We need suppliers from Karnataka providing food-grade biodegradable containers, minimum order 5,000 units, deliver within 60 days
+
+Hello,
+
+We are reaching out in Karnataka regarding we need suppliers from karnataka providing food-grade biodegradable containers, minimum order 5,000 units, deliver within 60 days with food-grade certification. We are evaluating suppliers such as Bengaluru Bagasse Works (SUP-010), GreenPack Naturals (SUP-001), Mangaluru EcoWare (SUP-016), Coorg Compost Craft (SUP-018), Mysuru Green Wraps (SUP-006), Belagavi BioBox (SUP-028) and would like to confirm availability for an initial order of 5000 units, deliverable within 60 days.
+
+Could you share current pricing, lead times and any certification documents on file? We'd appreciate a response so we can finalize our shortlist.
+
+Best regards,
+[Your name]
+[Your company]
+
