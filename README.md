@@ -247,9 +247,3 @@ wording of the outreach draft improve with the real model.
   agent but would need to change for a system that also has to remember
   what was already sent.
 
-## 10. Submission format
-
-Repository URL: _(fill in)_
-Demo video URL: _(fill in)_
-Model used: `qwen3:4b` (recommended), `qwen3:1.7b` (low-resource)
-Known limitations: see section 9 above.
