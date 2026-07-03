@@ -231,7 +231,7 @@ wording of the outreach draft improve with the real model.
 ## 9. Known limitations
 
 - `search_entities` uses substring keyword matching, not semantic/vector
-  search — sufficient for this dataset's size, but a larger production
+  search sufficient for this dataset's size, but a larger production
   dataset would benefit from embeddings.
 - The rule-based requirement-parser fallback recognizes a fixed list of
   South Indian states and certification keywords; it will not generalize
@@ -241,9 +241,6 @@ wording of the outreach draft improve with the real model.
   monthly capacity; it does not model multi-supplier order-splitting.
 - The outreach draft is a single message addressed to all shortlisted
   candidates together rather than one personalized email per supplier;
-  this was a scope simplification for the 3-day window.
-- No persistence/database layer — every run is stateless and reloads the
-  JSON dataset fresh, which is intentional for a read-only recommendation
-  agent but would need to change for a system that also has to remember
-  what was already sent.
+  this was a scope simplification for the provided window.
+
 
